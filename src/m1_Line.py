@@ -227,7 +227,8 @@ class Line(object):
         # ---------------------------------------------------------------------
         self.start=start.clone()
         self.end=end.clone()
-
+        self.initial_start=start.clone()
+        self.initial_end=end.clone()
         self.clonenumber=0
 
     def __repr__(self):
@@ -701,8 +702,8 @@ class Line(object):
         #        The tests are already written (below).
         #        They include the Example in the above doc-string.
         # ---------------------------------------------------------------------
-
-        return Point(self.intstart,self.intend)
+        self.start = self.initial_start
+        self.end = self.initial_end
 
 ###############################################################################
 # The TEST functions for the  Line  class begin here.
